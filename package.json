@@ -1,0 +1,32 @@
+{
+  "name": "webpack-concat-after-webpack-concat-plugin",
+  "version": "1.0.0",
+  "description": "This is webpack plugin for concat results of \"webpack-concat-plugin\" ",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZVanoZ/webpack-concat-after-webpack-concat-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "webpack-concat-plugin",
+    "concat"
+  ],
+  "author": "Ivan Zaglyada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZVanoZ/webpack-concat-after-webpack-concat-plugin/issues"
+  },
+  "homepage": "https://github.com/ZVanoZ/webpack-concat-after-webpack-concat-plugin#readme",
+  "dependencies": {
+    "webpack-concat-plugin": "^3.0.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-merge": "^4.2.1"
+  }
+}

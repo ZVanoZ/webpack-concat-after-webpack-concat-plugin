@@ -1,0 +1,21 @@
+{
+  "name": "examples",
+  "version": "0.0.1",
+  "description": "webpack-concat-after-webpack-concat-plugin/examples",
+  "directories": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open",
+    "build": "webpack"
+  },
+  "author": "Ivan Zaglyada",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.3.0",
+    "webpack-merge": "^4.2.1",
+    "webpack-concat-plugin": "^3.0.0",
+    "webpack-dev-server": "^3.2.1"
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///frontend/Module2/script1.js","webpack:///frontend/Module2/script2.js"],"names":["Module2","__proto__","sayHello","console","log"],"mappings":"AAAAA,WCAAA,QAAQC,WACPC,SAAU,WACTC,QAAQC,IAAI","sourcesContent":["Module2 = {}\n","Module2.__proto__ = {\n\tsayHello: function () {\n\t\tconsole.log('Module2/sayHello');\n\t}\n};\n"]}

@@ -1,3 +1,6 @@
+
+Публикация пакета в npm @link: https://codex.so/npm
+
 Если хотим опубликовать пакет в NPM-репозитарии.
 
 1. Регистрируемся
@@ -16,3 +19,8 @@ $ npm publish
 
 4. После этого переходим в свой проект и тянем зависимость
 $ npm add "webpack-concat-after-webpack-concat-plugin" --save-dev
+
+
+Если хотим обновить пакет в NPM-репозитарии.
+$ npm version 1.0.0
+$ npm publish

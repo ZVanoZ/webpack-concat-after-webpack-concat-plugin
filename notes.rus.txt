@@ -1,0 +1,18 @@
+Если хотим опубликовать пакет в NPM-репозитарии.
+
+1. Регистрируемся
+$ npm adduser
+Username: zvanoz
+Password: ***
+Email: (this IS public) edu.ZVanoZ@gmail.com
+Logged in as zvanoz on https://registry.npmjs.org/.
+
+2. Идем в почтовый ящик и подтверждаем регистрацию.
+
+3. Публикуем пакет
+$ npm publish
+...
++ webpack-concat-after-webpack-concat-plugin@1.0.0
+
+4. После этого переходим в свой проект и тянем зависимость
+$ npm add "webpack-concat-after-webpack-concat-plugin" --save-dev

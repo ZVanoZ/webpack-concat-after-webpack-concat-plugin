@@ -1,8 +1,10 @@
+'use strict';
+
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const ConcatPlugin = require('webpack-concat-plugin');
-const AfterConcatPlugin = require('../src/index.js');
+const AfterConcatPlugin = require('../index.js');
 //const HelloWorldPlugin = require('./hello-world-plugin.js');
 
 module.exports = function (env, argv) {

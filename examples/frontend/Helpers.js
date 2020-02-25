@@ -1,6 +1,6 @@
 Helpers = {
-	sayHello(){
-		console.log('Hello from "Helpers"');
+	sayHello(msgSource) {
+		console.log('Helpers/sayHello/msgSource=' + (msgSource || ''));
 	}
 };
-console.log('"Helpers.js" is ready to use!');
+console.log('"Helpers.js" included');

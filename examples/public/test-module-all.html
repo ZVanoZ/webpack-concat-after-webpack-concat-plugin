@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>test-separate.html</title>
+    <title>test-module-all.html</title>
     <link rel="stylesheet" href="bundle/step1/common.css">
-    <link rel="stylesheet" href="bundle/step1/Module1.css">
-    <link rel="stylesheet" href="bundle/step1/Module2.css">
+    <link rel="stylesheet" href="bundle/step2/module-all.css">
 </head>
 <body>
-<h1>Test simple bundles. Used only 'webpack-concat-plugin'</h1>
+<h1>Test bundles from bundles. Used 'webpack-concat-after-webpack-concat-plugin'</h1>
 
 <h2>Open Developer Tools in your browser and see messages in console tab.</h2>
 <h2>Open scripts tab and see Sources Map for your bundles.</h2>
@@ -21,11 +20,10 @@
     <div class="module2component1">module2component1</div>
     <div class="module2component2">module2component2</div>
 </div>
+</body>
 
 <script src="bundle/step1/Helpers.js"></script>
-<script src="bundle/step1/Module1.js"></script>
-<script src="bundle/step1/Module2.js"></script>
+<script src="bundle/step2/module-all.js"></script>
 <script src="bundle/entry-App.js"></script>
 
-</body>
 </html>

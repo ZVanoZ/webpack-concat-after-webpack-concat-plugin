@@ -1,0 +1,2 @@
+Helpers={sayHello(e){console.log("Helpers/sayHello/msgSource="+(e||""))}},console.log('"Helpers.js" included'),Helpers.sayHello2=function(e){console.log("Helpers/sayHello2/msgSource="+(e||""))},console.log('"Helpers2.js" included');
+//# sourceMappingURL=Helpers.js.map

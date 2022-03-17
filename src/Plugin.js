@@ -56,6 +56,7 @@ class Plugin {
 		let filesToConcat = [];
 		this.options.input.forEach((inputPath) => {
 			this.tracelog('FIND_PATH: ', inputPath);
+			let isFound = false;
 			compiler.options.plugins.forEach((plugin) => {
 				// Condition with "instanceof" do not work! Why???
 				// if (!(plugin instanceof ConcatPlugin)) {
@@ -68,12 +69,15 @@ class Plugin {
 					this.tracelog('SKIPPED_PATH: ', pluginOutPath);
 					return;
 				}
+				isFound = true;
 				plugin.settings.filesToConcat.forEach((filePath) => {
 					filesToConcat.push(filePath);
 					this.tracelog('ADDED: ', filePath);
 				});
-
 			});
+			if (!isFound){
+				console.error(new Error('Not found input point "' + inputPath + '" for "webpack-concat-after-webpack-concat-plugin".'));
+			}
 		});
 		if (filesToConcat.length < 1) {
 			this.tracelog('WARNING: can\'t find files to concat.');

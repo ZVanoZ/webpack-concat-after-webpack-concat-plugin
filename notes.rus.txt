@@ -22,5 +22,5 @@ $ npm add "webpack-concat-after-webpack-concat-plugin" --save-dev
 
 
 Если хотим обновить пакет в NPM-репозитарии.
-$ npm version 1.0.0
+$ npm version 1.0.3
 $ npm publish

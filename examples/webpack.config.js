@@ -319,6 +319,23 @@ module.exports = function(env, argv) {
 					]
 				}
 			})
+			// /**
+			//  * Test "Not Found error"
+			//  */
+			// , new AfterConcatPlugin({
+			// 	isTracelog: false,
+			// 	customPathPos: AfterConcatPlugin.getCustomPathPositions().BEGIN,
+			// 	input: [
+			// 		'/bundle/step2/not-found.js'
+			// 	],
+			// 	optionsNewConcatPlugin: {
+			// 		sourceMap: false,
+			// 		uglify: false,
+			// 		name: 'not-found',
+			// 		fileName: '[name].js',
+			// 		outputPath: '/bundle/trash/',
+			// 	}
+			// })
 		]
 	});
 	

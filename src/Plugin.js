@@ -10,16 +10,17 @@ const ConcatPlugin = require('webpack-concat-plugin');
  * @see: WebpackPluginFunction into node_modules/webpack/declarations/WebpackOptions.d.ts
  */
 class Plugin {
-	static getCustomPathPositions(){
+	static getCustomPathPositions() {
 		return {
-			BEGIN : 'CUSTOM_PATH_POS_BEGIN',
-			END : 'CUSTOM_PATH_POS_END',
+			BEGIN: 'CUSTOM_PATH_POS_BEGIN',
+			END: 'CUSTOM_PATH_POS_END',
 		};
 	}
+
 	constructor(options) {
 		// console.log('___/plugin/constructor: ', this);
 		this.options = options;
-		if ('object' !== typeof(this.options)) {
+		if ('object' !== typeof (this.options)) {
 			throw new Error('"options" is not Object');
 		}
 		this.options.isTracelog = this.options.isTracelog || false;
@@ -30,7 +31,7 @@ class Plugin {
 		if (!Array.isArray(options.input)) {
 			throw new Error('"options.input" is not Array');
 		}
-		if ('object' !== typeof(this.options.optionsNewConcatPlugin)) {
+		if ('object' !== typeof (this.options.optionsNewConcatPlugin)) {
 			throw new Error('"options.optionsNewConcatPlugin" is not Object');
 		}
 	}
@@ -41,15 +42,20 @@ class Plugin {
 	apply(compiler) {
 		// console.log('compiler', compiler.options.plugins.length);
 		this.tracelog('=====webpack-concat-after-webpack-concat-plugin=====');
-		if (this.options.optionsNewConcatPlugin.sourceMap && !this.options.optionsNewConcatPlugin.uglify) {
-			this.tracelog(
-				'WARNING: Source maps don\'t work without uglify! ',
-				"\n" + '_ Cause is "floridoo/concat-with-sourcemaps".',
-				"\n" + '_ @see: https://github.com/floridoo/concat-with-sourcemaps/issues/8'
+		if (this.options.optionsNewConcatPlugin.sourceMap
+			&& !this.options.optionsNewConcatPlugin.uglify
+		) {
+			console.warn(
+				'WARNING: Source maps don\'t work without uglify! '
+				+ "\n" + '_ Cause is "floridoo/concat-with-sourcemaps".'
+				+ "\n" + '_ @see: https://github.com/floridoo/concat-with-sourcemaps/issues/8',
+				{
+					options: this.options
+				}
 			);
 		}
 		let optionsNewConcatPlugin = Object.assign({
-			filesToConcat: ['']
+			filesToConcat: [ '' ]
 		}, this.options.optionsNewConcatPlugin);
 		let newConcatPlugin = new ConcatPlugin(optionsNewConcatPlugin);
 		this.tracelog('START: ', `${newConcatPlugin.settings.outputPath}${newConcatPlugin.getFileName()}`);
@@ -75,8 +81,13 @@ class Plugin {
 					this.tracelog('ADDED: ', filePath);
 				});
 			});
-			if (!isFound){
-				console.error(new Error('Not found input point "' + inputPath + '" for "webpack-concat-after-webpack-concat-plugin".'));
+			if (!isFound) {
+				console.error(
+					new Error('Not found input point "' + inputPath + '" for "webpack-concat-after-webpack-concat-plugin".'),
+					{
+						options: this.options
+					}
+				);
 			}
 		});
 		if (filesToConcat.length < 1) {
@@ -86,7 +97,7 @@ class Plugin {
 				if (filePath === '') {
 					return;
 				}
-				if(this.options.customPathPos === Plugin.getCustomPathPositions().BEGIN){
+				if (this.options.customPathPos === Plugin.getCustomPathPositions().BEGIN) {
 					filesToConcat.unshift(filePath)
 				} else {
 					filesToConcat.push(filePath)
